@@ -14,7 +14,8 @@
     "test:e2e": "npm --prefix Tools/PlaywrightTests test",
     "typecheck": "tsc --noEmit",
     "bench": "tsx src/cli/cli.ts",
-    "bench:strategy": "node --import tsx Tools/StrategyBench.ts"
+    "bench:strategy": "node --import tsx Tools/StrategyBench.ts",
+    "prepare": "npm run build --config vite.lib.config.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.3",
@@ -23,5 +24,16 @@
     "unplugin-dts": "^1.1.2",
     "vite": "^8.3.1",
     "vitest": "^5.0.2"
+  },
+  "files": [
+    "dist-lib"
+  ],
+  "main": "./dist-lib/engine.cjs",
+  "module": "./dist-lib/engine.js",
+  "exports": {
+    ".": {
+      "import": "./dist-lib/engine.js",
+      "require": "./dist-lib/engine.cjs"
+    }
   }
 }

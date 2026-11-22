@@ -13,7 +13,11 @@ coverage/
 # Static bundle produced by the 2D web client (`npm run build`).
 dist/
 
+# Library (`npm run build --config vite.lib.config.ts`)
+dist-lib/
+
 # Editor and OS cruft.
+.idea
 .DS_Store
 Thumbs.db
 *.swp
