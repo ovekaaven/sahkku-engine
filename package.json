@@ -31,8 +31,10 @@
   ],
   "main": "./dist-lib/engine.cjs",
   "module": "./dist-lib/engine.js",
+  "types": "./dist-lib/engine.d.ts",
   "exports": {
     ".": {
+      "types": "./dist-lib/engine.d.ts",
       "import": "./dist-lib/engine.js",
       "require": "./dist-lib/engine.cjs"
     }

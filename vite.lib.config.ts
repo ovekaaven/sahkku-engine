@@ -10,12 +10,13 @@ export default defineConfig({
       dts({
         entryRoot: "src",
         tsconfigPath: "tsconfig.json",
-        include: ["src/rules/*.ts"]
+        include: ["src/engine.d.ts", "src/rules/*.ts"],
+        copyDtsFiles: true,
       })
   ],
   build: {
     lib: {
-      entry: "index.lib.js",
+      entry: "src/engine.d.ts",
       name: "Engine",
       formats: ["es", "cjs"],
       fileName: "engine"
