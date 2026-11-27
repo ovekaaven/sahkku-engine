@@ -10,7 +10,8 @@ export default defineConfig({
       dts({
         entryRoot: "src",
         tsconfigPath: "tsconfig.json",
-        include: ["src/engine.d.ts", "src/rules/*.ts"],
+        include: ["src/engine.d.ts", "src/rules/*.ts", "src/agents/*.ts"],
+        exclude: ["src/agents/config.ts", "src/agents/llm.ts"],
         copyDtsFiles: true,
       })
   ],
